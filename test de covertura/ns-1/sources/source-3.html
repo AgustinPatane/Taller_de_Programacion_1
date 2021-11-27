@@ -1,0 +1,218 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > EscenarioConFacturasDel0al3</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">Test</a>
+</div>
+
+<h1>Coverage Summary for Class: EscenarioConFacturasDel0al3 (Test)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EscenarioConFacturasDel0al3</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    42,9%
+  </span>
+  <span class="absValue">
+    (3/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88,1%
+  </span>
+  <span class="absValue">
+    (59/67)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package Test;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import decorators.IMedico;
+<i class="no-highlight">4</i>&nbsp;import excepciones.MedicoYaExisteException;
+<i class="no-highlight">5</i>&nbsp;import excepciones.PacienteYaExisteException;
+<i class="no-highlight">6</i>&nbsp;import modelo.*;
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">9</i>&nbsp;import java.util.HashMap;
+<i class="no-highlight">10</i>&nbsp;
+<b class="fc"><i class="no-highlight">11</i>&nbsp;public class EscenarioConFacturasDel0al3 {</b>
+<b class="fc"><i class="no-highlight">12</i>&nbsp;    ArrayList&lt;Factura&gt; facturas =new ArrayList&lt;&gt;();</b>
+<b class="fc"><i class="no-highlight">13</i>&nbsp;    Clinica clinica=Clinica.getInstance();</b>
+<b class="fc"><i class="no-highlight">14</i>&nbsp;    ArrayList&lt;Paciente&gt; pacientes=new ArrayList&lt;&gt;();</b>
+<b class="fc"><i class="no-highlight">15</i>&nbsp;    HashMap&lt;String, Prestacion&gt; prestaciones1 = new HashMap&lt;String, Prestacion&gt;();</b>
+<b class="fc"><i class="no-highlight">16</i>&nbsp;    HashMap&lt;String, Prestacion&gt; prestaciones2 = new HashMap&lt;String, Prestacion&gt;();</b>
+<b class="fc"><i class="no-highlight">17</i>&nbsp;    HashMap&lt;String, Prestacion&gt; prestaciones3 = new HashMap&lt;String, Prestacion&gt;();</b>
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;    public HashMap&lt;String,Prestacion&gt; getPrestaciones1(){
+<b class="nc"><i class="no-highlight">20</i>&nbsp;        return prestaciones1;</b>
+<i class="no-highlight">21</i>&nbsp;    }
+<i class="no-highlight">22</i>&nbsp;    public HashMap&lt;String,Prestacion&gt; getPrestaciones2(){
+<b class="nc"><i class="no-highlight">23</i>&nbsp;        return prestaciones2;</b>
+<i class="no-highlight">24</i>&nbsp;    }
+<i class="no-highlight">25</i>&nbsp;    public HashMap&lt;String,Prestacion&gt; getPrestaciones3(){
+<b class="nc"><i class="no-highlight">26</i>&nbsp;        return prestaciones3;</b>
+<i class="no-highlight">27</i>&nbsp;    }
+<i class="no-highlight">28</i>&nbsp;
+<i class="no-highlight">29</i>&nbsp;    public void cargaEscenario(){
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        Paciente paciente1 = new Joven(&quot;121&quot;, &quot;Seba&quot;, &quot;A&quot;, &quot;Luro900&quot;, &quot;mdp&quot;, &quot;459-4312&quot;,1);</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;        Paciente paciente2 = new Mayor(&quot;564&quot;, &quot;Ima&quot;, &quot;V&quot;, &quot;Balcarce560&quot;, &quot;balcarce&quot;, &quot;3234-2323&quot;,2);</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;        Paciente paciente3 = new Ninio(&quot;5656&quot;, &quot;pepe&quot;, &quot;A&quot;, &quot;Belgrano3453&quot;, &quot;miramar&quot;, &quot;2345343&quot;,3);</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;        Paciente paciente4 = new Joven(&quot;37121455123&quot;, &quot;Jose&quot;, &quot;V&quot;, &quot;Rivadavia2342&quot;, &quot;tucuman&quot;, &quot;1111113&quot;,4);</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;        pacientes.add(paciente1);</b>
+<b class="fc"><i class="no-highlight">35</i>&nbsp;        pacientes.add(paciente2);</b>
+<b class="fc"><i class="no-highlight">36</i>&nbsp;        pacientes.add(paciente3);</b>
+<b class="fc"><i class="no-highlight">37</i>&nbsp;        pacientes.add(paciente4);</b>
+<i class="no-highlight">38</i>&nbsp;
+<i class="no-highlight">39</i>&nbsp;        try {
+<b class="fc"><i class="no-highlight">40</i>&nbsp;            clinica.addPaciente(paciente1);</b>
+<b class="fc"><i class="no-highlight">41</i>&nbsp;        } catch (PacienteYaExisteException e) {</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i class="no-highlight">43</i>&nbsp;        }</b>
+<i class="no-highlight">44</i>&nbsp;        try {
+<b class="fc"><i class="no-highlight">45</i>&nbsp;            clinica.addPaciente(paciente2);</b>
+<b class="fc"><i class="no-highlight">46</i>&nbsp;        } catch (PacienteYaExisteException e) {</b>
+<b class="fc"><i class="no-highlight">47</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i class="no-highlight">48</i>&nbsp;        }</b>
+<i class="no-highlight">49</i>&nbsp;        try {
+<b class="fc"><i class="no-highlight">50</i>&nbsp;            clinica.addPaciente(paciente3);</b>
+<b class="fc"><i class="no-highlight">51</i>&nbsp;        } catch (PacienteYaExisteException e) {</b>
+<b class="fc"><i class="no-highlight">52</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i class="no-highlight">53</i>&nbsp;        }</b>
+<i class="no-highlight">54</i>&nbsp;        try {
+<b class="fc"><i class="no-highlight">55</i>&nbsp;            clinica.addPaciente(paciente4);</b>
+<b class="fc"><i class="no-highlight">56</i>&nbsp;        } catch (PacienteYaExisteException e) {</b>
+<b class="fc"><i class="no-highlight">57</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i class="no-highlight">58</i>&nbsp;        }</b>
+<i class="no-highlight">59</i>&nbsp;        //Creo medicos
+<b class="fc"><i class="no-highlight">60</i>&nbsp;        IMedico Medico1 = MedicoFactory.getMedico(&quot;Pediatria&quot;,&quot;Residente&quot;,&quot;Magister&quot;, &quot;11234532&quot;, &quot;Pepe&quot;, &quot;Pepe&quot;, &quot;San Luis 1234&quot;, &quot;Batan&quot;, &quot;5551234&quot;, 2345);</b>
+<b class="fc"><i class="no-highlight">61</i>&nbsp;        IMedico Medico2 = MedicoFactory.getMedico(&quot;Cirugia&quot;,&quot;Residente&quot;,&quot;Magister&quot;, &quot;88234532&quot;, &quot;Lolo&quot;, &quot;Lolo&quot;, &quot;San Juan 8234&quot;, &quot;Miramar&quot;, &quot;8881234&quot;, 8888);</b>
+<i class="no-highlight">62</i>&nbsp;
+<i class="no-highlight">63</i>&nbsp;        try {
+<b class="fc"><i class="no-highlight">64</i>&nbsp;            clinica.addMedico(Medico1);</b>
+<b class="nc"><i class="no-highlight">65</i>&nbsp;        } catch (MedicoYaExisteException e) {</b>
+<b class="nc"><i class="no-highlight">66</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i class="no-highlight">67</i>&nbsp;        }</b>
+<i class="no-highlight">68</i>&nbsp;
+<i class="no-highlight">69</i>&nbsp;        try {
+<b class="fc"><i class="no-highlight">70</i>&nbsp;            clinica.addMedico(Medico2);</b>
+<b class="nc"><i class="no-highlight">71</i>&nbsp;        } catch (MedicoYaExisteException e) {</b>
+<b class="nc"><i class="no-highlight">72</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i class="no-highlight">73</i>&nbsp;        }</b>
+<i class="no-highlight">74</i>&nbsp;        //Prestacion-Consultas medicas
+<b class="fc"><i class="no-highlight">75</i>&nbsp;        ConsultaMedica consulta1= new ConsultaMedica(1,Medico1);</b>
+<b class="fc"><i class="no-highlight">76</i>&nbsp;        ConsultaMedica consulta2= new ConsultaMedica(1,Medico2);</b>
+<i class="no-highlight">77</i>&nbsp;
+<i class="no-highlight">78</i>&nbsp;        //Prestacion-Internacion
+<b class="fc"><i class="no-highlight">79</i>&nbsp;        Habitacion h1 = new Privada(&quot;55&quot;);</b>
+<b class="fc"><i class="no-highlight">80</i>&nbsp;        Habitacion h2 = new Compartida(&quot;10&quot;);</b>
+<b class="fc"><i class="no-highlight">81</i>&nbsp;        Habitacion h3 = new TerapiaIntensiva(&quot;12&quot;);</b>
+<b class="fc"><i class="no-highlight">82</i>&nbsp;        Internacion internacion1 = new Internacion(7, h1);</b>
+<b class="fc"><i class="no-highlight">83</i>&nbsp;        Internacion internacion2 = new Internacion(6, h2);</b>
+<b class="fc"><i class="no-highlight">84</i>&nbsp;        Internacion internacion3 = new Internacion(1, h3);</b>
+<i class="no-highlight">85</i>&nbsp;
+<i class="no-highlight">86</i>&nbsp;        //Se agrega las prestaciones al los pacientes a una estructura
+<i class="no-highlight">87</i>&nbsp;
+<i class="no-highlight">88</i>&nbsp;
+<b class="fc"><i class="no-highlight">89</i>&nbsp;        prestaciones1.put(internacion1.getHabitacion().getNumeroHabitacion(), internacion1);</b>
+<b class="fc"><i class="no-highlight">90</i>&nbsp;        prestaciones2.put(internacion2.getHabitacion().getNumeroHabitacion(), internacion2);</b>
+<b class="fc"><i class="no-highlight">91</i>&nbsp;        prestaciones2.put(internacion2.getHabitacion().getNumeroHabitacion(), internacion3);</b>
+<b class="fc"><i class="no-highlight">92</i>&nbsp;        prestaciones1.put(consulta1.getMedico().getNombre(), consulta1);</b>
+<b class="fc"><i class="no-highlight">93</i>&nbsp;        prestaciones2.put(consulta2.getMedico().getNombre(), consulta2);</b>
+<i class="no-highlight">94</i>&nbsp;
+<b class="fc"><i class="no-highlight">95</i>&nbsp;        Factura f1 =new Factura(paciente1,prestaciones1);</b>
+<b class="fc"><i class="no-highlight">96</i>&nbsp;        Factura f2 =new Factura(paciente2,prestaciones1);</b>
+<b class="fc"><i class="no-highlight">97</i>&nbsp;        Factura f3 =new Factura(paciente3,prestaciones1);</b>
+<b class="fc"><i class="no-highlight">98</i>&nbsp;        Factura f4 =new Factura(paciente4,prestaciones2);</b>
+<b class="fc"><i class="no-highlight">99</i>&nbsp;        facturas.add(f1);</b>
+<b class="fc"><i class="no-highlight">100</i>&nbsp;        facturas.add(f2);</b>
+<b class="fc"><i class="no-highlight">101</i>&nbsp;        facturas.add(f3);</b>
+<b class="fc"><i class="no-highlight">102</i>&nbsp;        facturas.add(f4);</b>
+<i class="no-highlight">103</i>&nbsp;
+<i class="no-highlight">104</i>&nbsp;    }
+<i class="no-highlight">105</i>&nbsp;    public ArrayList&lt;Factura&gt; getListaDeFacturas(){
+<i class="no-highlight">106</i>&nbsp;
+<b class="fc"><i class="no-highlight">107</i>&nbsp;        return facturas;</b>
+<i class="no-highlight">108</i>&nbsp;    }
+<i class="no-highlight">109</i>&nbsp;
+<i class="no-highlight">110</i>&nbsp;    public  ArrayList&lt;Paciente&gt;getListaPacientes(){
+<b class="nc"><i class="no-highlight">111</i>&nbsp;        return this.pacientes;</b>
+<i class="no-highlight">112</i>&nbsp;    }
+<i class="no-highlight">113</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-11-26 22:18</div>
+</div>
+</body>
+</html>

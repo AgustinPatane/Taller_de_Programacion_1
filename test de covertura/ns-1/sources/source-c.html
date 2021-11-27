@@ -1,0 +1,212 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > TestSiMayorDiasMayor10SiAleatorio7</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">Test</a>
+</div>
+
+<h1>Coverage Summary for Class: TestSiMayorDiasMayor10SiAleatorio7 (Test)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TestSiMayorDiasMayor10SiAleatorio7</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95,9%
+  </span>
+  <span class="absValue">
+    (47/49)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package Test;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import modelo.Factura;
+<i class="no-highlight">4</i>&nbsp;import modelo.Mayor;
+<i class="no-highlight">5</i>&nbsp;import modelo.Prestacion;
+<i class="no-highlight">6</i>&nbsp;import org.junit.After;
+<i class="no-highlight">7</i>&nbsp;import org.junit.Assert;
+<i class="no-highlight">8</i>&nbsp;import org.junit.Before;
+<i class="no-highlight">9</i>&nbsp;import org.junit.Test;
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">12</i>&nbsp;import java.util.Calendar;
+<i class="no-highlight">13</i>&nbsp;import java.util.Iterator;
+<i class="no-highlight">14</i>&nbsp;import java.util.Random;
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;import static org.mockito.Mockito.mock;
+<i class="no-highlight">17</i>&nbsp;import static org.mockito.Mockito.when;
+<i class="no-highlight">18</i>&nbsp;
+<b class="fc"><i class="no-highlight">19</i>&nbsp;public class TestSiMayorDiasMayor10SiAleatorio7 {</b>
+<b class="fc"><i class="no-highlight">20</i>&nbsp;    private final EscenarioConFacturasDel0al3 escenarioConFacturasDel0al3 =new EscenarioConFacturasDel0al3();</b>
+<i class="no-highlight">21</i>&nbsp;    private ArrayList&lt;Factura&gt; facturas;
+<i class="no-highlight">22</i>&nbsp;    private int numeroDeFactura;
+<i class="no-highlight">23</i>&nbsp;    private Calendar calendar;
+<i class="no-highlight">24</i>&nbsp;    private ArrayList &lt;Double&gt; listaDeInsumos;
+<b class="fc"><i class="no-highlight">25</i>&nbsp;    private Factura facturaMock = mock(Factura.class);</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;    private Random randomMock=mock(Random.class);</b>
+<i class="no-highlight">27</i>&nbsp;    private Factura f;
+<i class="no-highlight">28</i>&nbsp;    private Mayor mayor;
+<i class="no-highlight">29</i>&nbsp;
+<i class="no-highlight">30</i>&nbsp;    @Before
+<i class="no-highlight">31</i>&nbsp;    public void cargaEscenario(){
+<b class="fc"><i class="no-highlight">32</i>&nbsp;        escenarioConFacturasDel0al3.cargaEscenario();</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;        facturas=escenarioConFacturasDel0al3.getListaDeFacturas();</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;        numeroDeFactura=2;</b>
+<b class="fc"><i class="no-highlight">35</i>&nbsp;        calendar=Calendar.getInstance();</b>
+<b class="fc"><i class="no-highlight">36</i>&nbsp;        calendar.set(2011,1,1);</b>
+<b class="fc"><i class="no-highlight">37</i>&nbsp;        listaDeInsumos=new ArrayList&lt;Double&gt;();</b>
+<b class="fc"><i class="no-highlight">38</i>&nbsp;        listaDeInsumos.add(10.0);</b>
+<b class="fc"><i class="no-highlight">39</i>&nbsp;        f=escenarioConFacturasDel0al3.getListaDeFacturas().get(1);</b>
+<b class="fc"><i class="no-highlight">40</i>&nbsp;        mayor=new Mayor(&quot;564&quot;, &quot;Ima&quot;, &quot;V&quot;, &quot;Balcarce560&quot;, &quot;balcarce&quot;, &quot;3234-2323&quot;,2);</b>
+<i class="no-highlight">41</i>&nbsp;    }
+<i class="no-highlight">42</i>&nbsp;
+<i class="no-highlight">43</i>&nbsp;    @After
+<i class="no-highlight">44</i>&nbsp;    public void limpiaEscenario(){
+<b class="fc"><i class="no-highlight">45</i>&nbsp;        facturas=null;</b>
+<i class="no-highlight">46</i>&nbsp;    }
+<i class="no-highlight">47</i>&nbsp;
+<i class="no-highlight">48</i>&nbsp;    public double calculoImporteAdicionales(int numeroDeFactura, Calendar fechaDeSolicitud, ArrayList&lt;Double&gt; listaDeInsumos) {
+<b class="fc"><i class="no-highlight">49</i>&nbsp;        double A=0.6, B=0.35, C=1.1, D=0.75;</b>
+<b class="fc"><i class="no-highlight">50</i>&nbsp;        double importeTotal = 0;</b>
+<b class="fc"><i class="no-highlight">51</i>&nbsp;        if(numeroDeFactura &lt; Factura.getSiguienteNumero()) { //Si existe ese nro de factura.</b>
+<b class="fc"><i class="no-highlight">52</i>&nbsp;            boolean encontrado = false;</b>
+<b class="fc"><i class="no-highlight">53</i>&nbsp;            Iterator&lt;Factura&gt; iterator = facturas.iterator();</b>
+<b class="fc"><i class="no-highlight">54</i>&nbsp;            Factura f = null;</b>
+<b class="fc"><i class="no-highlight">55</i>&nbsp;            while (iterator.hasNext() &amp;&amp; !encontrado) {</b>
+<b class="fc"><i class="no-highlight">56</i>&nbsp;                f = iterator.next();</b>
+<b class="fc"><i class="no-highlight">57</i>&nbsp;                encontrado = (f.getNroFactura() == numeroDeFactura);</b>
+<i class="no-highlight">58</i>&nbsp;            }
+<b class="fc"><i class="no-highlight">59</i>&nbsp;            int milisegundosEnUnDia = 86400000;</b>
+<b class="fc"><i class="no-highlight">60</i>&nbsp;            int dias = (int) (fechaDeSolicitud.getTime().getTime() - f.getFecha().getTime().getTime()) / milisegundosEnUnDia;</b>
+<i class="no-highlight">61</i>&nbsp;            double importeParcial;
+<b class="fc"><i class="no-highlight">62</i>&nbsp;            if(dias &lt; 10){</b>
+<b class="fc"><i class="no-highlight">63</i>&nbsp;                double subTotalImpar=0;</b>
+<b class="fc"><i class="no-highlight">64</i>&nbsp;                int j = 1;</b>
+<b class="fc"><i class="no-highlight">65</i>&nbsp;                for(Prestacion i : f.getPrestaciones().values()) {</b>
+<b class="fc"><i class="no-highlight">66</i>&nbsp;                    if (j%2 == 0) {</b>
+<b class="fc"><i class="no-highlight">67</i>&nbsp;                        subTotalImpar += i.getSubtotal();</b>
+<i class="no-highlight">68</i>&nbsp;                    }
+<b class="fc"><i class="no-highlight">69</i>&nbsp;                    j++;</b>
+<b class="fc"><i class="no-highlight">70</i>&nbsp;                }</b>
+<b class="fc"><i class="no-highlight">71</i>&nbsp;                importeParcial = f.getTotal() - subTotalImpar * A;</b>
+<b class="fc"><i class="no-highlight">72</i>&nbsp;            }</b>
+<i class="no-highlight">73</i>&nbsp;            else {
+<b class="nc"><i class="no-highlight">74</i>&nbsp;                importeParcial = f.getTotal();</b>
+<i class="no-highlight">75</i>&nbsp;            }
+<i class="no-highlight">76</i>&nbsp;            //Nota metodo f.gePaciente esta mal implementado, ya que busca los pacientes registrados por Numero de historia cuando
+<i class="no-highlight">77</i>&nbsp;            //los mismos estan resgistrados por su DNI, por este mootivo se me rompe el codigo en esta instancia
+<i class="no-highlight">78</i>&nbsp;            /*if(f.getPaciente().esMayor()) {
+<i class="no-highlight">79</i>&nbsp;                importeTotal = importeParcial * C;
+<i class="no-highlight">80</i>&nbsp;            }*/
+<i class="no-highlight">81</i>&nbsp;            //utilizo mock para poder probar
+<b class="fc"><i class="no-highlight">82</i>&nbsp;            when(facturaMock.getPaciente()).thenReturn( new Mayor(&quot;564&quot;, &quot;Ima&quot;, &quot;V&quot;, &quot;Balcarce560&quot;, &quot;balcarce&quot;, &quot;3234-2323&quot;,2));</b>
+<b class="fc"><i class="no-highlight">83</i>&nbsp;            if(facturaMock.getPaciente().esMayor())</b>
+<b class="fc"><i class="no-highlight">84</i>&nbsp;                importeTotal = importeParcial * C;</b>
+<i class="no-highlight">85</i>&nbsp;            else {
+<b class="nc"><i class="no-highlight">86</i>&nbsp;                importeTotal = importeParcial * D;</b>
+<i class="no-highlight">87</i>&nbsp;            }
+<i class="no-highlight">88</i>&nbsp;            //Utilizo Mock para controlar el numero aleatorio
+<i class="no-highlight">89</i>&nbsp;            //if((int)(Math.random()*31) + 1 != f.getFecha().DAY_OF_MONTH) {
+<b class="fc"><i class="no-highlight">90</i>&nbsp;            when(randomMock.nextInt()).thenReturn(f.getFecha().DAY_OF_MONTH);</b>
+<b class="fc"><i class="no-highlight">91</i>&nbsp;            if(randomMock.nextInt()==f.getFecha().DAY_OF_MONTH){</b>
+<b class="fc"><i class="no-highlight">92</i>&nbsp;                for(double i : listaDeInsumos) {</b>
+<b class="fc"><i class="no-highlight">93</i>&nbsp;                    importeTotal += i;</b>
+<b class="fc"><i class="no-highlight">94</i>&nbsp;                }</b>
+<i class="no-highlight">95</i>&nbsp;            }
+<i class="no-highlight">96</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">97</i>&nbsp;        return importeTotal;}</b>
+<i class="no-highlight">98</i>&nbsp;
+<i class="no-highlight">99</i>&nbsp;    @Test
+<i class="no-highlight">100</i>&nbsp;    public void ejecucionMetodo(){
+<i class="no-highlight">101</i>&nbsp;        double respuesta;
+<b class="fc"><i class="no-highlight">102</i>&nbsp;        respuesta=calculoImporteAdicionales(numeroDeFactura,calendar,listaDeInsumos);</b>
+<b class="fc"><i class="no-highlight">103</i>&nbsp;        Factura f=escenarioConFacturasDel0al3.getListaDeFacturas().get(1);</b>
+<b class="fc"><i class="no-highlight">104</i>&nbsp;        Assert.assertEquals(&quot;Valor incorrecto&quot;,respuesta,f.getTotal()*0.6*1.1+listaDeInsumos.get(0),0);</b>
+<i class="no-highlight">105</i>&nbsp;    }
+<i class="no-highlight">106</i>&nbsp;}
+<i class="no-highlight">107</i>&nbsp;
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-11-26 22:18</div>
+</div>
+</body>
+</html>
